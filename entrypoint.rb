@@ -19,7 +19,7 @@ GithubChecksVerifier.configure do |config|
   config.check_regexp = check_regexp
   config.client = Octokit::Client.new(access_token: ENV["REPO_TOKEN"])
   config.ref = ENV["GIT_BRANCH"]
-  config.branch = ENV["GIT_BRANCH"]
+  config.branch = ENV["GITHUB_SHA"]
   config.repo = ENV["GITHUB_REPOSITORY"]
   config.verbose = verbose
   config.wait = wait.to_i

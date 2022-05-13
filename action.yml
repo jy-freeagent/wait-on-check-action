@@ -72,7 +72,7 @@ runs:
         CHECK_REGEXP: ${{ inputs.check-regexp }}
         REF: ${{ inputs.ref }}
         BRANCH: ${{ inputs.branch }}
-        REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REPO_TOKEN: ${{ inputs.repo-token }}
         VERBOSE: ${{ inputs.verbose }}
         WAIT_INTERVAL: ${{ inputs.wait-interval }}
         TIMEOUT: ${{ inputs.timeout }}
