@@ -17,6 +17,9 @@ inputs:
     default: ""
   ref:
     description: "A git ref to be checked: branch/tag/commit sha"
+    required: false
+  branch:
+    description: "Branch name e.g. release/2.8.10"
     required: true
   repo-token:
     description: "A GitHub token for the repo"
@@ -68,6 +71,7 @@ runs:
         CHECK_NAME: ${{ inputs.check-name }}
         CHECK_REGEXP: ${{ inputs.check-regexp }}
         REF: ${{ inputs.ref }}
+        BRANCH: ${{ inputs.branch }}
         REPO_TOKEN: ${{ inputs.repo-token }}
         VERBOSE: ${{ inputs.verbose }}
         WAIT_INTERVAL: ${{ inputs.wait-interval }}
