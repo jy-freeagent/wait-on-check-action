@@ -70,7 +70,8 @@ class GithubChecksVerifier < ApplicationService
   end
 
   def check_conclusion_allowed(check)
-    allowed_conclusions.include? check.conclusion
+    puts "!!! DEBUG: conclusion is #{check.conclusion}"
+    ['success', 'skipped'].include? check.conclusion
   end
 
   def fail_if_requested_check_never_run(all_checks)
