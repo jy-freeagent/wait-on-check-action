@@ -9,6 +9,7 @@ ref = ENV["REF"]
 token = ENV["REPO_TOKEN"]
 verbose = ENV["VERBOSE"]
 wait = ENV["WAIT_INTERVAL"]
+timeout = ENV["TIMEOUT"]
 workflow_name = ENV["RUNNING_WORKFLOW_NAME"]
 
 GithubChecksVerifier.configure do |config|
@@ -20,6 +21,7 @@ GithubChecksVerifier.configure do |config|
   config.repo = ENV["GITHUB_REPOSITORY"]
   config.verbose = verbose
   config.wait = wait.to_i
+  config.timeout = timeout.to_i
   config.workflow_name = workflow_name
 end
 
