@@ -6,7 +6,7 @@ inputs:
   allowed-conclusions:
     description: "Array of allowed conclusions"
     required: false
-    default: success,skipped
+    default: "success,skipped"
   check-name:
     description: "A name of a check that has to pass"
     required: false
