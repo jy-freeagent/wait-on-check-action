@@ -15,8 +15,8 @@ class GithubChecksVerifier < ApplicationService
   config_accessor(:wait) { 30 } # set a default
   config_accessor(:timeout) { 3 } # set a default
   config_accessor(:check_regexp) { "" }
-  config_accessor(:allowed_conclusions) { ["success", "skipped"] }
   config_accessor(:verbose) { true }
+  config_accessor(:allowed_conclusions) { ['success', 'skipped'] }
 
   def call
     wait_for_checks
