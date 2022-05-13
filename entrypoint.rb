@@ -17,7 +17,7 @@ GithubChecksVerifier.configure do |config|
   config.allowed_conclusions = allowed_conclusions.split(",").map(&:strip)
   config.check_name = check_name
   config.check_regexp = check_regexp
-  config.client = Octokit::Client.new(access_token: token)
+  config.client = Octokit::Client.new(access_token: ENV["REPO_TOKEN"])
   config.ref = ENV["GIT_BRANCH"]
   config.branch = ENV["GIT_BRANCH"]
   config.repo = ENV["GITHUB_REPOSITORY"]
