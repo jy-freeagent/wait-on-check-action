@@ -6,6 +6,7 @@ allowed_conclusions = ENV["ALLOWED_CONCLUSIONS"]
 check_name = ENV["CHECK_NAME"]
 check_regexp = ENV["CHECK_REGEXP"]
 ref = ENV["REF"]
+branch = ENV["GIT_BRANCH"]
 token = ENV["REPO_TOKEN"]
 verbose = ENV["VERBOSE"]
 wait = ENV["WAIT_INTERVAL"]
@@ -17,7 +18,8 @@ GithubChecksVerifier.configure do |config|
   config.check_name = check_name
   config.check_regexp = check_regexp
   config.client = Octokit::Client.new(access_token: token)
-  config.ref = ref
+  config.ref = ENV["GIT_BRANCH"]
+  config.branch = ENV["GIT_BRANCH"]
   config.repo = ENV["GITHUB_REPOSITORY"]
   config.verbose = verbose
   config.wait = wait.to_i
